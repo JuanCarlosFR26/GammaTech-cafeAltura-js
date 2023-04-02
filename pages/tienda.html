@@ -22,8 +22,10 @@
     <div class="body-container">
         <header id="header">
             <div class="logo">
-                <p>cafedealtura.com </p>
-                <img src="../assets/img/iconcafelogo.svg" alt="icon-coffee">
+                <a href="../index.html">
+                    <p>cafedealtura.com </p>
+                    <img src="../assets/img/iconcafelogo.svg" alt="icon-coffee">
+                </a>
             </div>
             <div class="links">
                 <a href="#" class="active">Tienda</a>
@@ -37,7 +39,10 @@
                 <p> +34 919 49 05 18</p>
             </div>
             <a href="#" class="session">Iniciar sesión</a>
-            <a href="./cesta.html" target="_blank"><img id="bag" src="../assets/img/shop.svg" alt="bag svg"></a>
+            <a href="./cesta.html"><img id="bag" src="../assets/img/shop.svg" alt="bag svg"></a>
+            <div class="numberCest">
+                <span id="cuantityChest"></span>
+            </div>
         </header>
 
         <!----------------------- CARDS ----------------------->
@@ -181,6 +186,22 @@
 
         <script src="../index.js"></script>
         <!-- <script src="../cest.js"></script> -->
+        <script>
+            const products = JSON.parse(localStorage.getItem('products'));
+    
+    
+            const countTotal = products.reduce((total, product) => {
+                return total + product.count
+            }, 0)
+    
+            // total cest img
+            const cestCount = document.querySelector('#cuantityChest');
+            cestCount.style.color = '#fff';
+            console.log(cestCount);
+    
+            cestCount.textContent = countTotal;
+    
+        </script>
 
     </div>
 </body>

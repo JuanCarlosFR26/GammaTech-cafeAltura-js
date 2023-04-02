@@ -3,6 +3,7 @@ const products = JSON.parse(localStorage.getItem('products'));
 console.log(products)
 
 const divProducts = document.querySelector('.productAdded');
+const totalCest = document.querySelector('#cuantity');
 
 products.forEach(product => {
     const listProduct = document.createElement('div');
@@ -188,4 +189,19 @@ function calcularPrecio() {
 
 }
 
+// Total cest text
+const countTotal = products.reduce((total, product) => {
+    return total + product.count
+}, 0)
+
+
 calcularPrecio();
+
+totalCest.innerText = '(' + countTotal + ')';
+
+// total cest img
+const cestCount = document.querySelector('#cuantityChest');
+cestCount.style.color = '#fff';
+console.log(cestCount);
+
+cestCount.textContent = countTotal;

@@ -23,11 +23,13 @@
     <div class="body-container">
         <header id="header">
             <div class="logo">
-                <p>cafedealtura.com </p>
-                <img src="../assets/img/iconcafelogo.svg" alt="icon-coffee">
+                <a href="../index.html">
+                    <p>cafedealtura.com </p>
+                    <img src="../assets/img/iconcafelogo.svg" alt="icon-coffee">
+                </a>
             </div>
             <div class="links">
-                <a href="./tienda.html" class="active" target="_blank">Tienda</a>
+                <a href="./tienda.html" class="active">Tienda</a>
                 <a href="#">Suscripción</a>
                 <a href="#">Para empresas</a>
                 <a href="#">Sobre nosotros</a>
@@ -39,6 +41,9 @@
             </div>
             <a href="#" class="session">Iniciar sesión</a>
             <img id="bag" src="../assets/img/shop.svg" alt="bag svg">
+            <div class="numberCest">
+                <span id="cuantityChest"></span>
+            </div>
         </header>
 
         <!------------------------- CESTA ------------------------->
@@ -90,7 +95,7 @@
                         </div>
                         <p class="default-text">Incluye 3,78€ de IVA</p>
                         <div class="button-wrapper">
-                            <button class="checkout">Ir a checkout</button>
+                            <button onclick="location.href='checkout.html'" class="checkout">Ir a checkout</button>
                             <button class="still-buying">Seguir comprando</button>
                         </div>
                     </div>
@@ -98,9 +103,9 @@
             </div>
         </section>
 
-        <section class="cest-copyright">
+        <footer class="cest-copyright">
             <p>Todos los derechos reservados - Café de Altura SL - 2022</p>
-        </section>
+        </footer>
 
 
         <script src="../cest.js"></script>
