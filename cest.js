@@ -98,6 +98,7 @@ products.forEach(product => {
         location.reload();
 
         price(product)
+        calcularPrecio()
 
     });
 
@@ -122,7 +123,7 @@ products.forEach(product => {
         const price = function(product) {
             let arr = JSON.parse(localStorage.getItem('products'));
             let index = arr.findIndex((item) => item.id === product.id);
-            priceproduct.innerText = (arr[index].price * arr[index].count) + ',00 €';
+            priceproduct.innerText = parseInt((arr[index].price * arr[index].count)) + ',00 €';
             localStorage.setItem('products', JSON.stringify(arr));
 
         }
@@ -130,6 +131,7 @@ products.forEach(product => {
         location.reload()
 
         price(product)
+        calcularPrecio()
     })
 
 
