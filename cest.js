@@ -158,7 +158,13 @@ function calcularPrecio() {
 
     let arrStorage = JSON.parse(localStorage.getItem('products'));
 
-    // Precio subtotal
+    if(arrStorage.length === 0) {
+        let inputValue = document.querySelectorAll('#radio');
+        inputValue.forEach(input => {
+            input.style.display = 'none'
+        })
+    } else {
+        // Precio subtotal
     let suma = 0;
 
     arrStorage.forEach(product => {
@@ -185,7 +191,18 @@ function calcularPrecio() {
             }
         })
     })
+    }
 
+    let buttonCheck = document.querySelector('#checkout-pay');
+
+    buttonCheck.addEventListener('click', () => {
+        let objPrice = {
+            subtotal: subPrice.innerText,
+            send: sendPrice.innerText,
+            total: totalPrice.innerText
+        }
+        localStorage.setItem('totalPrice', JSON.stringify(objPrice));
+    })
 
 }
 
@@ -205,3 +222,7 @@ cestCount.style.color = '#fff';
 console.log(cestCount);
 
 cestCount.textContent = countTotal;
+
+
+
+

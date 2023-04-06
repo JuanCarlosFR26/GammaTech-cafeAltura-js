@@ -269,4 +269,5 @@
     background: #2A5B45;
     opacity: 0.3;
     border-radius: 4px;
+    cursor: not-allowed;
 }
