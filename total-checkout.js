@@ -49,7 +49,38 @@ subPrice.innerText = prices.subtotal;
 sendPrice.innerText = prices.send;
 totalPrice.innerText = prices.total;
 
-// FORMULARIO 
+// FORMULARIO
+const inputsForm = document.querySelectorAll('.address-info input');
+const selectForm = document.querySelector('.address-info select');
+const form = document.querySelector('.address-info');
 const checkButton = document.querySelector('#checkout-btn');
-const inputsForm = document.querySelectorAll('input');
-const selectForm = document.querySelector('select');
+const payForm = document.querySelector('.pay-info');
+const inputsPay = document.querySelectorAll('.pay-info input');
+console.log(payForm);
+console.log(checkButton);
+
+form.addEventListener('input', () => {
+    inputsForm.forEach(input => {
+        if(input.value && selectForm.value) {
+            checkButton.style.opacity = '1';
+            checkButton.style.cursor = 'pointer';
+            checkButton.addEventListener('click', () => {
+                inputsPay.forEach(input => {
+                    if(input.value) {
+                        window.location.href = './payed.html'
+                    } else {
+                        console.log('none');
+                    }
+                })
+            })
+        } else {
+            checkButton.style.opacity = '0.3';
+        }
+    })
+})
+
+if(localStorage.length === 0 || localStorage.length === null) {
+    const iconChest = document.querySelector('.numberCest');
+
+    iconChest.style.display = 'none';
+}

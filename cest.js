@@ -216,13 +216,21 @@ calcularPrecio();
 
 totalCest.innerText = '(' + countTotal + ')';
 
-// total cest img
-const cestCount = document.querySelector('#cuantityChest');
-cestCount.style.color = '#fff';
-console.log(cestCount);
+if(countTotal !== 0) {
+    // total cest img
+    const cestCount = document.querySelector('#cuantityChest');
+    cestCount.style.color = '#fff';
 
-cestCount.textContent = countTotal;
+    cestCount.textContent = countTotal;
+} else {
+    const numberCest = document.querySelector('.numberCest');
+    numberCest.style.display = 'none'
+}
 
+if(localStorage.length === 0 || localStorage.length === null) {
+    const iconChest = document.querySelector('.numberCest');
 
+    iconChest.style.display = 'none';
+}
 
 

@@ -291,17 +291,20 @@
     <script>
         const products = JSON.parse(localStorage.getItem('products'));
 
+            const countTotal = products.reduce((total, product) => {
+                return total + product.count
+            }, 0)
 
-        const countTotal = products.reduce((total, product) => {
-            return total + product.count
-        }, 0)
+            if(countTotal !== 0) {
+                // total cest img
+                const cestCount = document.querySelector('#cuantityChest');
+                cestCount.style.color = '#fff';
 
-        // total cest img
-        const cestCount = document.querySelector('#cuantityChest');
-        cestCount.style.color = '#fff';
-        console.log(cestCount);
-
-        cestCount.textContent = countTotal;
+                cestCount.textContent = countTotal;
+            } else {
+                const numberCest = document.querySelector('.numberCest');
+                numberCest.style.display = 'none'
+            }
 
     </script>
 

@@ -66,3 +66,9 @@ buttonAdd.forEach((button, i) => {
 });
 
 
+
+if(localStorage.length === 0 || localStorage.length === null) {
+    const iconChest = document.querySelector('.numberCest');
+
+    iconChest.style.display = 'none';
+}
