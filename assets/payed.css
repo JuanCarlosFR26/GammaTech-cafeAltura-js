@@ -1,9 +1,14 @@
+body {
+    overflow-x: hidden;
+}
+
 .content-payed {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
     gap: 24px;
+    min-height: 1051px;
     height: auto;
     background: #fff;
 }

@@ -75,6 +75,7 @@ form.addEventListener('input', () => {
             })
         } else {
             checkButton.style.opacity = '0.3';
+            checkButton.style.cursor = 'not-allowed'
         }
     })
 })

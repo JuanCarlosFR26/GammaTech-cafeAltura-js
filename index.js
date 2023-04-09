@@ -1,6 +1,7 @@
 const containers = document.querySelectorAll('.title-chev');
 const dividers = document.querySelectorAll('.divider');
 const textShow = document.querySelectorAll('.faq-card small');
+const checkedCard = document.querySelector('.checkedAdded');
 
 dividers.forEach(divider => {
     divider.classList.toggle('show-answer')
@@ -44,6 +45,24 @@ buttonAdd.forEach((button, i) => {
 
         // arrProducts === null ? arrProducts = [objProduct] : arrProducts.push(objProduct);
 
+        checkedCard.style.background = 'rgba(114, 186, 57, 0.5)';
+        checkedCard.style.border = '2px solid darkgreen';
+        checkedCard.style.textAlign = 'center';
+        checkedCard.innerText = `${objProduct.product} añadido al carrito`;
+        checkedCard.style.width = '300px';
+        checkedCard.style.height = '88px';
+        checkedCard.style.lineHeight = '24px';
+        checkedCard.style.fontWeight = 'bold';
+        checkedCard.style.borderRadius = '22px';
+
+        checkedCard.style.display = 'flex';
+        checkedCard.style.alignItems = 'center';
+        checkedCard.style.justifyContent = 'center';
+
+        setTimeout(()=> {
+            checkedCard.style.display = 'none';
+        }, 1800)
+
         let arrProducts = JSON.parse(localStorage.getItem('products')) || [];
 
     const add = function(product) {
@@ -54,8 +73,6 @@ buttonAdd.forEach((button, i) => {
         } else {
             arrProducts[index].count++;
         }
-
-    
 
     localStorage.setItem('products', JSON.stringify(arrProducts));
     }

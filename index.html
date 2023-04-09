@@ -222,8 +222,12 @@
                         <div class="telephoneForm">
                             <label for="phoneForm">Teléfono</label>
                             <div class="input-phone">
-                                <select name="numbersPhone" id="numbersPhone">
+                                <select name="numbersPhone" id="opt">
                                     <option value="us">US</option>
+                                    <option value="es">ES</option>
+                                    <option value="gr">GR</option>
+                                    <option value="fr">FR</option>
+                                    <option value="it">IT</option>
                                 </select>
                                 <input type="number" name="numbersPhone" id="numbersPhone" placeholder="+1 (555) 987-6543">
                             </div>
@@ -233,7 +237,7 @@
                             <textarea name="textareaForm" id="textareaForm" cols="30" rows="10" placeholder="¿En qué podemos ayudarte?"></textarea>
                         </div>
                         <div class="checkTerms">
-                            <input type="checkbox" name="checkForm" id="checkForm">
+                            <input type="checkbox" name="checkForm" id="checkForm" value="acept">
                             <label for="checkForm"><a href="#">Acepto la <span id="strong">Política de Privacidad</span> y los <span id="strong">Términos y condiciones.</span></a></label>
                         </div>
                         <button type="submit" id="buttonForm">Enviar</button>
@@ -287,6 +291,7 @@
 
 
     <script src="index.js"></script>
+    <script src="form.js"></script>
 
     <script>
         const products = JSON.parse(localStorage.getItem('products'));
