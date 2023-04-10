@@ -45,23 +45,25 @@ buttonAdd.forEach((button, i) => {
 
         // arrProducts === null ? arrProducts = [objProduct] : arrProducts.push(objProduct);
 
-        checkedCard.style.background = 'rgba(114, 186, 57, 0.5)';
-        checkedCard.style.border = '2px solid darkgreen';
-        checkedCard.style.textAlign = 'center';
-        checkedCard.innerText = `${objProduct.product} añadido al carrito`;
-        checkedCard.style.width = '300px';
-        checkedCard.style.height = '88px';
-        checkedCard.style.lineHeight = '24px';
-        checkedCard.style.fontWeight = 'bold';
-        checkedCard.style.borderRadius = '22px';
+        // Tarjeta checked producto añadido. Quitar el reload a la función add()
 
-        checkedCard.style.display = 'flex';
-        checkedCard.style.alignItems = 'center';
-        checkedCard.style.justifyContent = 'center';
+        // checkedCard.style.background = 'rgba(114, 186, 57, 0.5)';
+        // checkedCard.style.border = '2px solid darkgreen';
+        // checkedCard.style.textAlign = 'center';
+        // checkedCard.innerText = `${objProduct.product} añadido al carrito`;
+        // checkedCard.style.width = '300px';
+        // checkedCard.style.height = '88px';
+        // checkedCard.style.lineHeight = '24px';
+        // checkedCard.style.fontWeight = 'bold';
+        // checkedCard.style.borderRadius = '22px';
 
-        setTimeout(()=> {
-            checkedCard.style.display = 'none';
-        }, 1800)
+        // checkedCard.style.display = 'flex';
+        // checkedCard.style.alignItems = 'center';
+        // checkedCard.style.justifyContent = 'center';
+
+        // setTimeout(()=> {
+        //     checkedCard.style.display = 'none';
+        // }, 1800)
 
         let arrProducts = JSON.parse(localStorage.getItem('products')) || [];
 
@@ -75,6 +77,8 @@ buttonAdd.forEach((button, i) => {
         }
 
     localStorage.setItem('products', JSON.stringify(arrProducts));
+
+    location.reload();
     }
 
     add(objProduct)
