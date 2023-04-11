@@ -15,8 +15,10 @@ containers.forEach(container => {
     container.addEventListener('click', e => {
         const divider =  container.nextElementSibling;
         const text = container.nextElementSibling.nextElementSibling;
+        let imgChev = container.lastElementChild;
         divider.classList.toggle('show-answer')
         text.classList.toggle('show-answer');
+        imgChev.classList.toggle('chevronDown-Up');
     })
 })
 
