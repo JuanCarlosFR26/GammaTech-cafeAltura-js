@@ -297,3 +297,7 @@
     line-height: 16px;
     color: #ffffff;
 }
+
+.cestEmpty {
+    opacity: .4;
+}

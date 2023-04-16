@@ -209,10 +209,15 @@ function calcularPrecio() {
 // Total cest text
 const countTotal = products.reduce((total, product) => {
     return total + product.count
-}, 0)
+}, 0);
 
 
-calcularPrecio();
+if(countTotal === 0 || totalCest.innerText === null || totalCest.innerText === 'undefined') {
+    const buttonToPay = document.getElementById('checkout-pay').disabled = true;
+} else {
+    calcularPrecio();
+}
+
 
 totalCest.innerText = '(' + countTotal + ')';
 
