@@ -233,4 +233,3 @@ if(localStorage.length === 0 || localStorage.length === null) {
     iconChest.style.display = 'none';
 }
 
-
